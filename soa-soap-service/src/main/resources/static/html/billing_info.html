@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>billing info</title>
+<link rel="stylesheet" href="../layui/css/layui.css" media="all">
+<link rel="stylesheet" href="../css/billing_info.css" media="all">
+</head>
+<body>
+
+	<div class="layui-container">
+		<div class="layui-row">
+			<div class="layui-col-md12">
+				<fieldset class="layui-elem-field">
+					<legend>查询条件</legend>
+					<div class="layui-field-box">
+						<form class="layui-form" action="">
+							<div class="layui-form-item">
+								<div class="layui-row">
+									<div
+										class="layui-col-xs4 layui-col-sm4 layui-col-md4 search_item">
+										<div class="layui-inline">
+											<label class="layui-form-label">开始时间：</label>
+											<div class="layui-input-inline">
+												<input type="text" class="layui-input" id="begin_date"
+													name="begin_date" placeholder="yyyy-MM-dd">
+											</div>
+										</div>
+									</div>
+									<div
+										class="layui-col-xs4 layui-col-sm4 layui-col-md4 search_item">
+										<div class="layui-inline">
+											<label class="layui-form-label">结束时间：</label>
+											<div class="layui-input-inline">
+												<input type="text" class="layui-input" id="end_date"
+													name="end_date" placeholder="yyyy-MM-dd">
+											</div>
+										</div>
+									</div>
+									<div
+										class="layui-col-xs4 layui-col-sm4 layui-col-md4 search_item">
+										<div class="layui-inline">
+											<label class="layui-form-label">单号：</label>
+											<div class="layui-input-inline">
+												<input type="text" class="layui-input" id="bill_numer"
+													name="bill_numer">
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="layui-row">
+									<div
+										class="layui-col-xs4 layui-col-sm4 layui-col-md4 search_item">
+										<div class="layui-inline">
+											<label class="layui-form-label">购方名称：</label>
+											<div class="layui-input-inline">
+												<input type="text" class="layui-input" id="buyer_name"
+													name="buyer_name">
+											</div>
+										</div>
+									</div>
+
+									<div
+										class="layui-col-xs4 layui-col-sm4 layui-col-md4 search_item">
+										<div class="layui-inline">
+											<label class="layui-form-label">购方税号：</label>
+											<div class="layui-input-inline">
+												<input type="text" class="layui-input" id="buyer_duty_paragraph"
+													name="buyer_duty_paragraph">
+											</div>
+										</div>
+									</div>
+
+									<div
+										class="layui-col-xs4 layui-col-sm4 layui-col-md4 search_item">
+										<div class="layui-input-inline">
+											<button class="layui-btn" lay-submit lay-filter="search">查询</button>
+											<button type="reset" class="layui-btn layui-btn-warm">重置</button>
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+						</form>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="layui-container">
+		<!-- 列表名称 -->
+		<div class="layui-row">
+			<div class="layui-col-xs12 layui-col-sm12 layui-col-md12"
+				style="text-align: center; font-size: large; color: #01AAED">销售发票主表
+			</div>
+		</div>
+		<div class="layui-row">
+			<div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
+				<!-- 销售发票主表信息 -->
+				<table class="layui-hide" id="main_billing_table"
+					lay-filter='main_billing_table'></table>
+			</div>
+		</div>
+
+		<!-- 列表名称 -->
+		<div class="layui-row">
+			<div class="layui-col-xs12 layui-col-sm12 layui-col-md12"
+				style="text-align: center; font-size: large; color: #01AAED">销售发票明细表
+			</div>
+		</div>
+		<div class="layui-row">
+			<div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
+				<!-- 销售发票明细表信息 -->
+				<table class="layui-hide" id="detail_billing_table"></table>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script type="text/html" id="main_toolbar">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="send_receipt">发送回执</button>
+  </div>
+</script>
+<script type="text/html" id="detail_toolbar">
+  <div class="layui-btn-container">
+  </div>
+</script>
+<script src="../layui/layui.js" charset="utf-8"></script>
+<script src="../js/common.js" charset="utf-8"></script>
+<script src="../js/billing_info.js" charset="utf-8"></script>
+</html>

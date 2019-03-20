@@ -1,0 +1,11 @@
+.search_item {
+	text-align: center;
+}
+
+.layui-row {
+	margin-top: 10px;
+}
+
+body {
+	overflow-y: scroll;
+} /* 禁止刷新后出现横向滚动条 */
